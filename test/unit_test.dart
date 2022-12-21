@@ -17,30 +17,57 @@ void main() {
   );
 
   group(
-    "Simple Test",
+    "Group add",
     () {
       test(
-        "add",
+        "add Test 1",
         () {
           expect(homeController!.add(400, 400), 800);
         },
       );
+
       test(
-        "substract",
+        "add Test 2",
+        () {
+          expect(homeController!.add(4005, 4005), 8010);
+        },
+      );
+    },
+  );
+
+  group(
+    "Group Future add",
+    () {
+      test(
+        "Future add Test 1",
+        () async {
+          expect(await homeController!.futureAdd(400, 400), 800);
+        },
+      );
+
+      test(
+        "Future add Test 2",
+        () async {
+          expect(await homeController!.futureAdd(4005, 4005), 8010);
+        },
+      );
+    },
+  );
+
+  group(
+    "Group substract",
+    () {
+      test(
+        "substract Test 1",
         () {
           expect(homeController!.substract(400, 400), 0);
         },
       );
+
       test(
-        "multiply",
+        "substract Test 2",
         () {
-          expect(homeController!.multiply(400, 400), 160000);
-        },
-      );
-      test(
-        "divide",
-        () {
-          expect(homeController!.divide(400, 400), 1);
+          expect(homeController!.substract(4005, 4000), 5);
         },
       );
     },
