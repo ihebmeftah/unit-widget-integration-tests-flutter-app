@@ -5,26 +5,44 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:testing_flutter_app/main.dart';
+import 'package:testing_flutter_app/app/modules/home/controllers/home_controller.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  HomeController? homeController;
+  setUp(
+    () {
+      homeController = HomeController();
+    },
+  );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
+  group(
+    "Simple Test",
+    () {
+      test(
+        "add",
+        () {
+          expect(homeController!.add(400, 400), 800);
+        },
+      );
+      test(
+        "substract",
+        () {
+          expect(homeController!.substract(400, 400), 0);
+        },
+      );
+      test(
+        "multiply",
+        () {
+          expect(homeController!.multiply(400, 400), 160000);
+        },
+      );
+      test(
+        "divide",
+        () {
+          expect(homeController!.divide(400, 400), 1);
+        },
+      );
+    },
+  );
 }

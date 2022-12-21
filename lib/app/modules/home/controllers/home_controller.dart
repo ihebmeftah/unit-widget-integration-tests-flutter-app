@@ -1,23 +1,11 @@
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
+  double? a,b;
+  int? c,d;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
+  double add(double a, double b) => a + b;
+  double substract(double a, double b) => a - b;
+  double multiply(double a, double b) => a * b;
+  double divide(double a, double b) => a / b;
 }
