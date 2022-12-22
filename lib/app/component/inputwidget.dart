@@ -11,6 +11,7 @@ class InputWidget extends StatelessWidget {
         Text("$name :     "),
         Expanded(
           child: TextFormField(
+            key: Key(name),
             controller: controller,
             decoration: const InputDecoration(border: OutlineInputBorder()),
           ),

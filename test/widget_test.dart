@@ -21,6 +21,7 @@ void main() {
           expect(find.byType(TextFormField), findsNWidgets(3));
           expect(find.byType(Expanded), findsNWidgets(3));
           expect(find.byType(InputWidget), findsNWidgets(3));
+          expect(find.byType(TextButton), findsNothing);
         },
       );
     },
