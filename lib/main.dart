@@ -8,6 +8,9 @@ void main() {
   runApp(
     GetMaterialApp(
       title: "Application",
+      darkTheme: ThemeData(brightness: Brightness.dark),
+      themeMode: ThemeMode.dark,
+      debugShowCheckedModeBanner: false,
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     ),
