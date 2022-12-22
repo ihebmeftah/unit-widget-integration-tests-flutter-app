@@ -5,11 +5,8 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:get/get.dart';
 import 'package:testing_flutter_app/app/modules/home/controllers/home_controller.dart';
-import 'package:testing_flutter_app/app/modules/home/views/home_view.dart';
 
 void main() {
   HomeController? homeController;
@@ -74,5 +71,4 @@ void main() {
       );
     },
   );
-
 }
